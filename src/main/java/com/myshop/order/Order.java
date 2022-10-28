@@ -5,10 +5,19 @@ public class Order {
     private ShippingInfo shippingInfo;
 
     public void changeShippingInfo(ShippingInfo shippingInfo) {
-        if (!orderState.isShippingChangeable()) {
+        if (!isShippingChangeable()) {
             throw new IllegalStateException("dd");
         }
         this.shippingInfo = shippingInfo;
+    }
+
+    public void changeShipped(){}
+    public void cancel() {}
+    public void completePayment() {}
+
+
+    public boolean isShippingChangeable() {
+        return orderState == OrderState.PAYMENT_WAITING;
     }
 }
 
