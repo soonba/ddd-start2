@@ -1,8 +1,11 @@
 package com.myshop.order;
 
+import java.util.List;
+
 public class Order {
-    private OrderState orderState;
-    private ShippingInfo shippingInfo;
+
+    private List<OrderLine> orderLines;
+    private Money totalAmounts;
 
     public void changeShippingInfo(ShippingInfo shippingInfo) {
         if (!isShippingChangeable()) {
