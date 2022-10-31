@@ -6,18 +6,18 @@ public class OrderLine {
     private int quantity;
     private int amounts;
 
-    public OrderLine(Product product, int price, int quantity, int amounts) {
+    public OrderLine(Product product, int price, int quantity) {
         this.product = product;
         this.price = price;
         this.quantity = quantity;
-        this.amounts = amounts;
+        this.amounts = calculateAmounts();
     }
 
     private int calculateAmounts() {
         return price * quantity;
     }
 
-    private int getAmounts() {
+    public int getAmounts() {
         return amounts;
     }
 }

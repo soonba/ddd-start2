@@ -2,6 +2,10 @@ package com.myshop.order;
 
 public enum OrderState {
     PAYMENT_WAITING,
-    SHIPPED
+    PREPARING,
+    SHIPPED,
+    DELIVERING,
+    DELIVERY_COMPLETED,
+    CANCELED
 }
 
